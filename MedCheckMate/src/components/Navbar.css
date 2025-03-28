@@ -1,0 +1,217 @@
+.navbar {
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  min-width: max-content;
+  transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+  transform: translateY(-1px);
+}
+
+.nav-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.nav-brand:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links button:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.nav-links button.active {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+  font-weight: 600;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+
+.login-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.signup-btn {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  font-size: 1.25rem !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%) !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: auto;
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-brand {
+    display: none;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .nav-links button {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .nav-links button::before {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-links button:nth-child(1)::before {
+    content: "🏠";
+  }
+
+  .nav-links button:nth-child(2)::before {
+    content: "🔍";
+  }
+
+  .nav-links button:nth-child(3)::before {
+    content: "➕";
+  }
+
+  .nav-links button:nth-child(4)::before {
+    content: "ℹ️";
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
